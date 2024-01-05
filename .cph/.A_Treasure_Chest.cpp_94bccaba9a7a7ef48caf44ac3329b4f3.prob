@@ -1,0 +1,1 @@
+{"name":"Local: A_Treasure_Chest","url":"c:\\Users\\deeps\\OneDrive\\Desktop\\CP\\Contest\\A_Treasure_Chest.cpp","tests":[{"id":1699023128233,"input":"3\n5 7 2\n10 5 0\n5 8 2\n","output":"7\n10\n9\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\deeps\\OneDrive\\Desktop\\CP\\Contest\\A_Treasure_Chest.cpp","group":"local","local":true}

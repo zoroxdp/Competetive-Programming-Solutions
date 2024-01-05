@@ -1,0 +1,1 @@
+{"name":"Local: MinMoves","url":"c:\\Users\\deeps\\OneDrive\\Desktop\\CP\\Contest\\MinMoves.cpp","tests":[{"id":1699119022355,"input":"3 3\nXOX\nOXO\nXOX\n","output":"2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\deeps\\OneDrive\\Desktop\\CP\\Contest\\MinMoves.cpp","group":"local","local":true}
