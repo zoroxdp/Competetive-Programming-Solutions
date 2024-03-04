@@ -36,32 +36,37 @@ int32_t main(){
     io;
     int t; cin>>t;
     while(t--){
-        int n; cin>>n;
+        int n,q;
+        cin>>n>>q;
         vector<int> arr(n);
+        int sum = 0;
         for(auto &it: arr){
             cin>>it;
+            sum += it;
         }
-        int minEle = *min_element(arr.begin(), arr.end());
-        int minCount = 0;
-        for(auto it: arr) minCount += it==minEle;
-        if(minCount == 1){
-            cout<<"YES"<<endl;
-            continue;
-        } else if(minCount == n) {
-            cout<<"NO"<<endl;
-            continue;
-        } else {
-            bool flag = true;
+        while(q--){
+            int x; cin>>x;
+            bool flag = false;
             for(int i = 0; i < n; i++){
-                if(arr[i]%minEle != 0){
-                    flag = false;
-                    break;
+                for(int j = i+1; j < n; j++){
+                    int temp = sum-arr[i]-arr[j];
+                    temp *= 2;
+                    temp += arr[i]+arr[j];
+                    if(temp == x){
+                        flag = true;
+                        swap(arr[0],arr[i]);
+                        swap(arr[n-1], arr[j]);
+                        for(int i = 0; i < n; i++){
+                            cout<<arr[i]<<" ";
+                        }
+                        cout<<endl;
+                        break;
+                    }
                 }
+                if(flag == true) break;
             }
             if(!flag){
-                cout<<"YES"<<endl;
-            } else {
-                cout<<"NO"<<endl;
+                cout<<-1<<endl;
             }
         }
     }

@@ -34,35 +34,11 @@ typedef tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_
 int32_t main(){
 
     io;
-    int t; cin>>t;
-    while(t--){
-        int n; cin>>n;
-        vector<int> arr(n);
-        for(auto &it: arr){
-            cin>>it;
-        }
-        int minEle = *min_element(arr.begin(), arr.end());
-        int minCount = 0;
-        for(auto it: arr) minCount += it==minEle;
-        if(minCount == 1){
-            cout<<"YES"<<endl;
-            continue;
-        } else if(minCount == n) {
-            cout<<"NO"<<endl;
-            continue;
-        } else {
-            bool flag = true;
-            for(int i = 0; i < n; i++){
-                if(arr[i]%minEle != 0){
-                    flag = false;
-                    break;
-                }
-            }
-            if(!flag){
-                cout<<"YES"<<endl;
-            } else {
-                cout<<"NO"<<endl;
-            }
-        }
+    int n; cin>>n;
+    if(n == 17){
+        cout<<"YAY"<<endl;
+    } else {
+        cout<<"NO"<<endl;
     }
+
 }

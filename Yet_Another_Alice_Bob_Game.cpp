@@ -36,33 +36,26 @@ int32_t main(){
     io;
     int t; cin>>t;
     while(t--){
-        int n; cin>>n;
-        vector<int> arr(n);
-        for(auto &it: arr){
-            cin>>it;
-        }
-        int minEle = *min_element(arr.begin(), arr.end());
-        int minCount = 0;
-        for(auto it: arr) minCount += it==minEle;
-        if(minCount == 1){
-            cout<<"YES"<<endl;
-            continue;
-        } else if(minCount == n) {
-            cout<<"NO"<<endl;
-            continue;
-        } else {
-            bool flag = true;
-            for(int i = 0; i < n; i++){
-                if(arr[i]%minEle != 0){
-                    flag = false;
-                    break;
+        int n,a,b; cin>>n>>a>>b;
+        if(a == b){
+            if(n > a){
+                if((n-(a+1))%(a+1) == 0){
+                    cout<<"Bob"<<endl;
+                } else {
+                    cout<<"Alice"<<endl;
                 }
-            }
-            if(!flag){
-                cout<<"YES"<<endl;
             } else {
-                cout<<"NO"<<endl;
+                cout<<"Alice"<<endl;
             }
+        } else if(a < b){
+            if(n <= a){
+                cout<<"Alice"<<endl;
+            } else {
+                cout<<"Bob"<<endl;
+            }
+        } else {
+            cout<<"Alice"<<endl;
         }
     }
+
 }

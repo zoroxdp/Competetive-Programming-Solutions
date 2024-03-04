@@ -38,31 +38,27 @@ int32_t main(){
     while(t--){
         int n; cin>>n;
         vector<int> arr(n);
+        for(auto &it: arr) cin>>it;
+        sort(arr.begin(), arr.end());
+        vector<int> arr1, arr2;
+        bool flag  = true;
         for(auto &it: arr){
-            cin>>it;
-        }
-        int minEle = *min_element(arr.begin(), arr.end());
-        int minCount = 0;
-        for(auto it: arr) minCount += it==minEle;
-        if(minCount == 1){
-            cout<<"YES"<<endl;
-            continue;
-        } else if(minCount == n) {
-            cout<<"NO"<<endl;
-            continue;
-        } else {
-            bool flag = true;
-            for(int i = 0; i < n; i++){
-                if(arr[i]%minEle != 0){
-                    flag = false;
-                    break;
-                }
-            }
-            if(!flag){
-                cout<<"YES"<<endl;
+            if(flag){
+                arr1.push_back(it);
             } else {
-                cout<<"NO"<<endl;
+                arr2.push_back(it);
             }
+            flag = !flag;
         }
+        reverse(arr2.begin(), arr2.end());
+        vector<int> fin;
+        for(auto &it: arr1) fin.push_back(it);
+        for(auto &it: arr2) fin.push_back(it);
+        int ans = 0;
+        for(int i = 0; i < n-1; i++){
+            ans += fin[i]+fin[i+1];
+        }
+        cout<<ans<<endl;
     }
+
 }
